@@ -69,7 +69,7 @@ public class CsoportMunka_Java {
     static void osztas() {
         
     }
-    //HIBÁS!!! NE HASZNÁLD!
+    //HIBÁS!!! NE HASZNÁLD%!
     static int general( String muvelet){
         Random rnd = new Random();
         int osszeg = 0;
