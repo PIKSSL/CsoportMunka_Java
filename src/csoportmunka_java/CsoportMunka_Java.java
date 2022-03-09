@@ -47,7 +47,7 @@ public class CsoportMunka_Java {
     static void osszeadas() {
         boolean ciklus2 = false;
         while(!ciklus2){
-            //asdasd
+            //asd
             System.out.println("Mennyi");
         }
     }
