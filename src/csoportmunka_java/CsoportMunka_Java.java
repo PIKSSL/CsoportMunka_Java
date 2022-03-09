@@ -1,5 +1,6 @@
 package csoportmunka_java;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class CsoportMunka_Java {
@@ -57,12 +58,36 @@ public class CsoportMunka_Java {
     }
 
     static void szorzas() {
+        boolean ciklus3 = false;
+        while(!ciklus3){
+            
+            System.out.printf("Mennyi %d x %d ?\n") ;
+        }
         
     }
 
     static void osztas() {
         
     }
-
+    //HIBÁS!!! NE HASZNÁLD
+    static int general( String muvelet){
+        Random rnd = new Random();
+        int osszeg = 0;
+        
+        if(muvelet == "+" ){
+            osszeg = rnd.nextInt(100-1)+1 + rnd.nextInt(100-1)+1;
+            return osszeg;
+        }else if(muvelet == "-"){
+            osszeg = rnd.nextInt(100-1)+1 - rnd.nextInt(100-1)+1;
+            return osszeg;
+        }else if(muvelet == "*"){
+            osszeg = rnd.nextInt(100-1)+1 * rnd.nextInt(100-1)+1;
+            return osszeg;
+        }else if(muvelet == "/"){
+            osszeg = rnd.nextInt(100-1)+1 / rnd.nextInt(100-1)+1;
+            return osszeg;
+        }
+        return 0;
+    }
     
 }
