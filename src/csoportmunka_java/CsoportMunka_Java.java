@@ -1,31 +1,55 @@
 package csoportmunka_java;
-public class CsoportMunka_Java {
 
+import java.util.Scanner;
+
+public class CsoportMunka_Java {
+    
     public static void main(String[] args) {
         //Bekérés metódusban  || menü
         menu();
     }
-
     private static void menu() { //Menü
-        
-        //Négy fő megtódus 
-        osszeadas();
-        kivonas();
-        szorzas();
-        osztas();
+        System.out.println("A program segítségével elvégezhet egyszerü összeadási/kivonási/szorzási/osztási műveleteket.\nAz alábbi menüpontok közül választhat:");
+        boolean ciklus = false;
+        while(!ciklus){
+            int valasztas = bekeres("1|Összeadás\n2|Kivonás\n3|Szorzás\n4|Osztás\n5|Kilépés");
+            //Négy fő megtódus 
+            
+            osszeadas();
+            kivonas();
+            szorzas();
+            osztas();
+            
+        }
+    }
+    static int bekeres(String szoveg){ 
+        Scanner be = new Scanner(System.in);
+        System.out.println(szoveg);
+        String bekeres = be.nextLine();
+        while(!ellenorzo(bekeres)){
+            bekeres = be.nextLine();
+        }
+        return Integer.parseInt(bekeres);
         
     }
-    static void bekeres(String szoveg){ 
-        
-    }
-    static int ellenorzo(String adat){ //Szöveg/szám ellenőrzés
-        
-        int vegleges = 0; //érték csere
-        return vegleges;  
+    static boolean ellenorzo(String adat){ //Szöveg/szám ellenőrzés
+        if(adat.equals("")){
+            System.out.println("HIBA:üres mező");
+            return false;
+        }
+        for (int i = 0; i < adat.length(); i++)
+            if (!Character.isDigit(adat.charAt(i))){
+                System.out.println("HIBA:csak számokat adhat meg");
+                return false;}
+        return true; 
     }
 
     static void osszeadas() {
-        
+        boolean ciklus2 = false;
+        while(!ciklus2){
+            
+            System.out.println("Mennyi");
+        }
     }
 
     static void kivonas() {
@@ -39,5 +63,6 @@ public class CsoportMunka_Java {
     static void osztas() {
         
     }
+
     
 }
