@@ -112,6 +112,7 @@ public class CsoportMunka_Java {
     } //03.14 elkészült || nem tökéletes de rottyon vagyok egy betegség miatt
 
     static void osztas() {
+
         boolean ciklus3 = false;
         while(!ciklus3){
             int[] szam = general("/");
