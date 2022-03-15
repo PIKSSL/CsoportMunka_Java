@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CsoportMunka_Java {
-    //FIGYELEM!!! Amennyiben észlelsz bármilyen hibát, amely akadályozza a te kódrészleted lefutását és netán a már megírt metódusokban van a hiba, megpróbálhatod javítani is, de biztos ami biztos, szólj előtte. Krisz.
     public static void main(String[] args) {
         //Bekérés metódusban  || menü
         menu();
@@ -14,9 +13,9 @@ public class CsoportMunka_Java {
         System.out.println("A program segítségével elvégezhet egyszerü összeadási/kivonási/szorzási/osztási műveleteket.\nAz alábbi menüpontok közül választhat:");
         boolean ciklus = false;
         while(!ciklus){
-            int valasztas = bekeres("1|Összeadás[NEM MŰKÖDIK]\n2|Kivonás[NEM MŰKÖDIK]\n3|Szorzás\n4|Osztás[NEM MŰKÖDIK]\n5|Kilépés");
+            int valasztas = bekeres("1|Összeadás\n2|Kivonás\n3|Szorzás\n4|Osztás\n5|Kilépés");
             //Négy fő metódus 
-            while(!(valasztas > 1 && valasztas < 6))
+            while(!(valasztas > 0 && valasztas < 6))
                 valasztas = bekeres("HIBA:Ilyen opció nem szerepel a menüpontok között!\n1|Összeadás\n2|Kivonás\n3|Szorzás\n4|Osztás\n5|Kilépés");
             if (valasztas == 1){
                 osszeadas();
@@ -57,11 +56,11 @@ public class CsoportMunka_Java {
     static void osszeadas() {
         boolean ciklus2 = false;
         while(!ciklus2){
-            int[] szamz = general("*");
+            int[] szamz = general("+");
             while(!(szamz[0] > 1 && szamz[0] < 100)){
-                szamz = general("*");
+                szamz = general("+");
             }
-            System.out.printf("Mennyi %d x %d ?\n", szamz[1],szamz[2]);
+            System.out.printf("Mennyi %d + %d ?\n", szamz[1],szamz[2]);
             int eredmeny = bekeres("Végeredmény:\n>>");
             helyes_helytelen(eredmeny, szamz[0]);
             int folytat = bekeres("Szeretnél még egy példát?\n[1]Igen\n[2]Nem");
@@ -80,7 +79,7 @@ public class CsoportMunka_Java {
             while(!(szamt[0] > 1 && szamt[0] < 100)){
                 szamt = general("-");
             }
-            System.out.printf("Mennyi %d x %d ?\n", szamt[1],szamt[2]);
+            System.out.printf("Mennyi %d - %d ?\n", szamt[1],szamt[2]);
             int eredmeny = bekeres("Végeredmény:\n>>");
             helyes_helytelen(eredmeny, szamt[0]);
             int folytat = bekeres("Szeretnél még egy példát?\n[1]Igen\n[2]Nem");
@@ -113,7 +112,22 @@ public class CsoportMunka_Java {
     } //03.14 elkészült || nem tökéletes de rottyon vagyok egy betegség miatt
 
     static void osztas() {
-        
+        boolean ciklus3 = false;
+        while(!ciklus3){
+            int[] szam = general("/");
+            while(!(szam[0] > 1 && szam[0] < 100)){
+                szam = general("/");
+            }
+            System.out.printf("Mennyi %d / %d ?\n", szam[1],szam[2]);
+            int eredmeny = bekeres("Végeredmény:\n>>");
+            helyes_helytelen(eredmeny, szam[0]);
+            int folytat = bekeres("Szeretnél még egy példát?\n[1]Igen\n[2]Nem");
+            if (folytat !=1){
+                ciklus3 = true;
+            }else{
+                System.out.println("Itt a következő példa...");
+            }
+        }
     }
     static int[] general( String muvelet){ 
         Random rnd = new Random();
