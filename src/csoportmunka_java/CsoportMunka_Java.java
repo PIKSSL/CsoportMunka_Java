@@ -57,13 +57,39 @@ public class CsoportMunka_Java {
     static void osszeadas() {
         boolean ciklus2 = false;
         while(!ciklus2){
-            
-            System.out.println("Mennyi");
+            int[] szamz = general("*");
+            while(!(szamz[0] > 1 && szamz[0] < 100)){
+                szamz = general("*");
+            }
+            System.out.printf("Mennyi %d x %d ?\n", szamz[1],szamz[2]);
+            int eredmeny = bekeres("Végeredmény:\n>>");
+            helyes_helytelen(eredmeny, szamz[0]);
+            int folytat = bekeres("Szeretnél még egy példát?\n[1]Igen\n[2]Nem");
+            if (folytat !=1){
+                ciklus2 = true;
+            }else{
+                System.out.println("Itt a következő példa...");
+            }
         }
     }
 
     static void kivonas() {
-        
+        boolean ciklus1 = false;
+        while(!ciklus1){
+            int[] szamt = general("-");
+            while(!(szamt[0] > 1 && szamt[0] < 100)){
+                szamt = general("-");
+            }
+            System.out.printf("Mennyi %d x %d ?\n", szamt[1],szamt[2]);
+            int eredmeny = bekeres("Végeredmény:\n>>");
+            helyes_helytelen(eredmeny, szamt[0]);
+            int folytat = bekeres("Szeretnél még egy példát?\n[1]Igen\n[2]Nem");
+            if (folytat !=1){
+                ciklus1 = true;
+            }else{
+                System.out.println("Itt a következő példa...");
+            }
+        }
     }
 
     static void szorzas() {
