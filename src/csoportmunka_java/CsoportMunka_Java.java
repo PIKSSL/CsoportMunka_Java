@@ -57,11 +57,11 @@ public class CsoportMunka_Java {
     static void osszeadas() {
         boolean ciklus2 = false;
         while(!ciklus2){
-            int[] szamz = general("*");
+            int[] szamz = general("+");
             while(!(szamz[0] > 1 && szamz[0] < 100)){
-                szamz = general("*");
+                szamz = general("+");
             }
-            System.out.printf("Mennyi %d x %d ?\n", szamz[1],szamz[2]);
+            System.out.printf("Mennyi %d + %d ?\n", szamz[1],szamz[2]);
             int eredmeny = bekeres("Végeredmény:\n>>");
             helyes_helytelen(eredmeny, szamz[0]);
             int folytat = bekeres("Szeretnél még egy példát?\n[1]Igen\n[2]Nem");
@@ -80,7 +80,7 @@ public class CsoportMunka_Java {
             while(!(szamt[0] > 1 && szamt[0] < 100)){
                 szamt = general("-");
             }
-            System.out.printf("Mennyi %d x %d ?\n", szamt[1],szamt[2]);
+            System.out.printf("Mennyi %d - %d ?\n", szamt[1],szamt[2]);
             int eredmeny = bekeres("Végeredmény:\n>>");
             helyes_helytelen(eredmeny, szamt[0]);
             int folytat = bekeres("Szeretnél még egy példát?\n[1]Igen\n[2]Nem");
@@ -113,7 +113,23 @@ public class CsoportMunka_Java {
     } //03.14 elkészült || nem tökéletes de rottyon vagyok egy betegség miatt
 
     static void osztas() {
-        
+        boolean osztas = false;
+        while(!osztas){
+            int[] szamaim = general("/");
+            while (!(szamaim[0] > 1 && szamaim[0] < 100)){
+                szamaim = general("/");
+            }
+        System.out.println("Mennyi "+szamaim[1]+" / "+szamaim[2]+" ?\n");
+        int eredmeny = bekeres("Eredmény: \n");
+        helyes_helytelen(eredmeny, szamaim[0]);
+        int folytatas = bekeres("Szeretnél egy újabb példát?\n[1] = Igen\n[2] = Nem");
+        if (folytatas !=1){
+            osztas = true;
+        }
+        else{
+            System.out.println("Egy következő példa..");
+            }
+        }
     }
     static int[] general( String muvelet){ 
         Random rnd = new Random();
