@@ -9,7 +9,7 @@ megszoritas :Nem lehet 100 felett és 1 alatt a végösszeg
 
 
 Valentin > Kivonás/Osztás metódus  (kivonas(), osztas())
-Krisz > Szorzás/Bekérés metódus ellenorzessel (osszeadas(),szorzas(),bekeres())
+Krisz > Szorzás/Bekérés metódus ellenorzessel/menü (osszeadas(),szorzas(),bekeres())
 Laci > Összeadás
  
 A példák eleme random kell összerakódjon
